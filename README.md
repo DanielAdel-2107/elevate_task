@@ -16,7 +16,7 @@ An application that fetches products from an API and allows users to filter prod
 ### Home Screen
 ![Product Screen](screenshots/products_screen.png)
 
-### Filter by Category
+### Filter Screen
 ![Filter Screen](screenshots/filter_screen.png)
 
 ### Filter by Category
