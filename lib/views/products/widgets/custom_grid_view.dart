@@ -1,3 +1,4 @@
+import 'package:elevate_task/models/product_model.dart';
 import 'package:elevate_task/views/products/widgets/custom_product_card.dart';
 import 'package:flutter/material.dart';
 
@@ -5,7 +6,6 @@ class CustomGridView extends StatelessWidget {
   const CustomGridView({
     super.key,
   });
-
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
@@ -18,7 +18,16 @@ class CustomGridView extends StatelessWidget {
         ),
         itemCount: 5,
         itemBuilder: (BuildContext context, int index) {
-          return CustomProductCard();
+          return CustomProductCard(
+            productModel: ProductModel(
+                id: 1,
+                ratingModel: RatingModel(rate: 4.5, count: 21),
+                category: "category",
+                title: "title",
+                image: "image",
+                price: 45.5,
+                description: "description"),
+          );
         });
   }
 }

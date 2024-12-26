@@ -1,3 +1,4 @@
+import 'package:elevate_task/models/product_model.dart';
 import 'package:elevate_task/utils/colors/app_colors.dart';
 import 'package:elevate_task/views/products/widgets/custom_product_details.dart';
 import 'package:elevate_task/views/products/widgets/custom_product_image.dart';
@@ -6,7 +7,9 @@ import 'package:flutter/material.dart';
 class CustomProductCard extends StatelessWidget {
   const CustomProductCard({
     super.key,
+    required this.productModel,
   });
+  final ProductModel productModel;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -20,7 +23,10 @@ class CustomProductCard extends StatelessWidget {
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [CustomProductImage(), ProductDetails()],
+        children: [
+          CustomProductImage(productModel: productModel),
+          ProductDetails(productModel: productModel)
+        ],
       ),
     );
   }
