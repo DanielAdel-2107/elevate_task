@@ -28,9 +28,8 @@ class FilterScreenBody extends StatelessWidget {
               Expanded(
                 child: ElevatedButton(
                   onPressed: () {
-                    provider.filterProducts().then(() {
-                      Navigator.pop(context);
-                    });
+                    provider.filterProducts();
+                    Navigator.pop(context);
                   },
                   child: Text("Apply Filters"),
                 ),

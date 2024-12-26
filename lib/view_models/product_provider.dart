@@ -15,9 +15,9 @@ class ProductProvider with ChangeNotifier {
   String selectedCategory = "All";
   List<String> categories = [
     "All",
-    "Jewelry",
-    "Electronics",
-    "Women's Clothing",
+    "jewelery",
+    "electronics",
+    "women's clothing",
     "men's clothing"
   ];
   ProductProvider({required this.dioConsumer}) {
@@ -41,6 +41,7 @@ class ProductProvider with ChangeNotifier {
     minPrice = 0;
     maxPrice = 1000;
     selectedCategory = "All";
+    searchList = productList;
     notifyListeners();
   }
 
@@ -49,6 +50,8 @@ class ProductProvider with ChangeNotifier {
       searchList = filterList
           .where((element) => element.title.toLowerCase().contains(query))
           .toList();
+    } else {
+      searchList = filterList;
     }
     notifyListeners();
   }
@@ -65,7 +68,7 @@ class ProductProvider with ChangeNotifier {
   }
 
   filterProducts() {
-    if (selectedCategory != "") {
+    if (selectedCategory != "All") {
       filterList = productList
           .where((element) => element.category == selectedCategory)
           .toList();
