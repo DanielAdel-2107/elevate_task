@@ -1,4 +1,5 @@
 import 'package:elevate_task/view_models/product_provider.dart';
+import 'package:elevate_task/views/filter/screens/filter_screen.dart';
 import 'package:flutter/material.dart';
 
 class FilterPart extends StatelessWidget {
@@ -21,7 +22,10 @@ class FilterPart extends StatelessWidget {
           },
         )),
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => FilterScreen()));
+          },
           icon: Icon(Icons.filter_alt_rounded),
         )
       ],
