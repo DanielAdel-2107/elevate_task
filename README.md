@@ -2,6 +2,26 @@
 
 A new Flutter project.
 
+# Products App
+
+An application that fetches products from an API and allows users to filter products by category.
+
+## Features
+- Fetch products from a remote API.
+- Display a list of products with details.
+- Filter products by category to enhance user experience.
+
+## Design Screenshots
+
+### Home Screen
+![Product Screen](screenshots/products_screen.png)
+
+### Filter by Category
+![Filter Screen](screenshots/filter_screen.png)
+
+### Filter by Category
+![Get Result](screenshots/get_result.png)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
