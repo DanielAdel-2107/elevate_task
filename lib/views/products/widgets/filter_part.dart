@@ -1,10 +1,13 @@
+import 'package:elevate_task/view_models/product_provider.dart';
 import 'package:flutter/material.dart';
 
 class FilterPart extends StatelessWidget {
   const FilterPart({
     super.key,
+    required this.provider,
   });
 
+  final ProductProvider provider;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -13,7 +16,9 @@ class FilterPart extends StatelessWidget {
             child: SearchBar(
           elevation: WidgetStatePropertyAll(0),
           hintText: 'Search by product name',
-          onChanged: (value) {},
+          onChanged: (value) {
+            provider.searchProducts(value);
+          },
         )),
         IconButton(
           onPressed: () {},
